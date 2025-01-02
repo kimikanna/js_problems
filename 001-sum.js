@@ -13,8 +13,17 @@
  * @returns {number}
  */
 function sum(n) {
-    res = Math.abs(n - 1);
-    return res;
+    let result = 1;
+
+    if (n < 1) {
+        return result;
+    }
+
+    for (let i = 2; i <= n; i++) { 
+        result += i;
+    }
+
+    return result;
 }
 
 module.exports = sum;

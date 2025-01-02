@@ -13,7 +13,16 @@
  * @returns {boolean}
  */
 function isPalindrome(value) {
-    return undefined;
+    const len = value.length;
+    const halfLen = Math.floor(len / 2);
+
+    for (let i = 0; i < halfLen; i++) {
+        if (value[i] !== value[len - 1 - i]) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 module.exports = isPalindrome;

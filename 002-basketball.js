@@ -16,7 +16,24 @@
  * @returns {(number|undefined)}
  */
 function getWinner(points) {
-    return undefined;
+    let firstTeamScore = 0;
+    let secondTeamScore = 0;
+
+    for (const score of points) {
+        const scores = score.split('-');
+        const team1Score = Number(scores[0]);
+        const team2Score = Number(scores[1]);
+        firstTeamScore += team1Score;
+        secondTeamScore += team2Score;
+    }
+
+    if (firstTeamScore > secondTeamScore) {
+        return 1; // Победила команда 1
+    } else if (secondTeamScore > firstTeamScore) {
+        return 2; // Победила команда 2
+    } else {
+        return undefined; // Ничья
+    }
 }
 
 module.exports = getWinner;

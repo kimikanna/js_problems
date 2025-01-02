@@ -18,7 +18,31 @@
  * @returns {boolean}
  */
 function validatePassword(password) {
-    return undefined;
+    if (password.length < 7) {
+        return false;
+    }
+
+    let hasLower = false;
+    let hasUpper = false;
+    let hasDigit = false;
+
+    for (let i = 0; i < password.length; i++) {
+        const char = password[i];
+
+        if (char >= 'a' && char <= 'z') {
+            hasLower = true;
+        } else if (char >= 'A' && char <= 'Z') {
+            hasUpper = true;
+        } else if (char >= '0' && char <= '9') {
+            hasDigit = true;
+        }
+
+        if (hasLower && hasUpper && hasDigit) {
+            return true;
+        }
+    }
+
+    return hasLower && hasUpper && hasDigit;
 }
 
 module.exports = validatePassword;

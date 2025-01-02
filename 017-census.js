@@ -13,7 +13,17 @@
  * @returns {undefined|number}
  */
 function census(list) {
-    return -1;
+    let maxAge = -1;
+    let index = -1;
+
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].gender == 'Male' && list[i].age > maxAge) {
+            maxAge = list[i].age;
+            index = i + 1;
+        }
+    }
+
+    return index == -1 ? undefined : index;
 }
 
 module.exports = census;

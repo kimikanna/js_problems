@@ -14,7 +14,23 @@
  * @returns {boolean}
  */
 function checkTicket(number) {
-    return undefined;
+    let isHappy = false;
+    let ticketHalf = number.length / 2;
+    let equality = 0;
+
+    for (let i = 0; i < ticketHalf; i++) {
+        equality += Number(number[i]);
+    }
+
+    for (let i = ticketHalf; i <= number.length - 1; i++) {
+        equality -= Number(number[i]);
+    }
+
+    if (equality == 0) {
+        isHappy = true;
+    }
+
+    return isHappy;
 }
 
 module.exports = checkTicket;

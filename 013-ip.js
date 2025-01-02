@@ -19,7 +19,21 @@
  * @returns {boolean}
  */
 function isIpValid(address) {
-    return undefined;
+    const parts = address.split('.');
+
+    if (parts.length !== 4) {
+        return false;
+    }
+
+    for (let i = 0; i < parts.length; i++) {
+        const part = parts[i];
+
+        if (isNaN(part) || part < 0 || part > 255) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 module.exports = isIpValid;

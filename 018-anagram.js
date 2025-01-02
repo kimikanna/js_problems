@@ -15,7 +15,14 @@
  * @returns {boolean}
  */
 function anagram(x, y) {
-    return undefined;
+    if (x == '' && y == '') {
+        return false;
+    }
+
+    const sortedX = x.toLowerCase().split('').sort().join('');
+    const sortedY = y.toLowerCase().split('').sort().join('');
+    
+    return sortedX == sortedY;
 }
 
 module.exports = anagram;
