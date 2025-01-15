@@ -33,6 +33,8 @@ function searchAnagrams(value) {
         }
     }
 
+    // console.log(seen);
+
     // Собираем результат в строку и возвращаем
     return result.join(' ');
 }
